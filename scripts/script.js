@@ -15,24 +15,22 @@ var backgroundAudio = document.getElementById("backgroundAudio");
 var currentPlaying = null;
 var progressElement = document.getElementById("progressElement");
 var volumeControl = document.getElementById("volumeControl");
-var progressSlider = document.getElementById("progressSlider"); // New progress slider
+var progressSlider = document.getElementById("progressSlider");
 var currentPlaybackPosition = 0;
-var progressUpdateInterval; // Variable to store the interval ID
+var progressUpdateInterva
 
 
 function updateProgress() {
     var percentage = (backgroundAudio.currentTime / backgroundAudio.duration) * 100;
-
-    // Gradually increase the slider value
     var currentPercentage = parseFloat(progressSlider.value);
-    var targetPercentage = Math.min(percentage, currentPercentage + 1); // Adjust the increment as needed
+    var targetPercentage = Math.min(percentage, currentPercentage + 1); 
 
     animateSlider(currentPercentage, targetPercentage);
 }
 
-// Function to animate the slider gradually
+
 function animateSlider(currentValue, targetValue) {
-    var duration = 1000; // Duration of the animation in milliseconds
+    var duration = 1000; 
     var startTime = Date.now();
 
     function update() {
@@ -41,60 +39,55 @@ function animateSlider(currentValue, targetValue) {
         var progress = Math.min(1, elapsedTime / duration);
         var newValue = currentValue + (targetValue - currentValue) * progress;
 
-        progressSlider.value = newValue.toFixed(2); // Round to 2 decimal places
+        progressSlider.value = newValue.toFixed(2); 
 
         if (progress === 1) {
             clearInterval(animationInterval);
         }
     }
 
-    var animationInterval = setInterval(update, 16); // Run the update function approximately every 16 milliseconds
+    var animationInterval = setInterval(update, 16); 
 }
 
 
-// Function to seek the song to a specific position based on the slider value
 function seekSong(value) {
     var newPosition = (value / 100) * backgroundAudio.duration;
     backgroundAudio.currentTime = newPosition;
 }
 
 function playPause(playDiv) {
-    // Assuming bar is a global variable
     var bar = document.getElementById("playbar");
-    // Get the computed style of the bar element
     var barDisplayStyle = window.getComputedStyle(bar).getPropertyValue("display");
 
     if (barDisplayStyle === 'none') {
-        // Display the bar with a fade-in effect
+
         bar.style.display = 'block';
         setTimeout(function () {
             bar.style.opacity = '1';
-        }, 10); // A small delay to allow the display property to take effect
+        }, 10); 
     } else {
-        // Hide the bar with a fade-out effect
+
         bar.style.opacity = '0';
         setTimeout(function () {
             bar.style.display = 'none';
-        }, 500); // Adjust the duration to match the transition duration in CSS
+        }, 500); 
     }
 
     var song = playDiv.parentNode.getAttribute("data-song");
     if (song === currentPlaying && !backgroundAudio.paused) {
-        // Pause the audio and store the current playback position
         currentPlaybackPosition = backgroundAudio.currentTime;
         backgroundAudio.pause();
         playDiv.innerHTML = '<img src="img/svg/play.svg">';
-        clearInterval(progressUpdateInterval); // Clear the interval
+        clearInterval(progressUpdateInterval); 
     } else {
-        // Set the new song and resume playback
+
         backgroundAudio.src = song;
 
-        // Wait for the audio to load, then set the playback position and play
         backgroundAudio.addEventListener("loadedmetadata", function () {
             backgroundAudio.currentTime = currentPlaybackPosition;
             backgroundAudio.play();
             playDiv.innerHTML = '<img src="img/svg/pause.svg">';
-            // Set an interval to update the progress regularly
+           
             progressUpdateInterval = setInterval(updateProgress, 1000);
         }, { once: true });
     }
@@ -102,7 +95,6 @@ function playPause(playDiv) {
     currentPlaying = song;
 }
 
-// Add a click event listener to reset the currentPlaying on button click
 document.getElementById("mute").addEventListener("click", function () {
     currentPlaying = null;
 });
@@ -115,13 +107,12 @@ function adjustVolume() {
     backgroundAudio.volume = volumeControl.value;
 }
 
-// Call updateProgress every 1000 milliseconds (1 second)
 setInterval(function () {
     updateProgress();
 }, 1000);
 
 backgroundAudio.addEventListener("ended", function () {
-    // Hide all animation divs when the song ends
+
     hideAnimationDivs();
 });
 
@@ -144,6 +135,6 @@ function hideAnimationDivs() {
     });
 }
 
-// It will return you all the div(in the form of array) that have a class panel
+
 
 
