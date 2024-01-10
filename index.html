@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Spotify - Web Player: Music for everyone </title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/utility.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <div class="container flex bg-black ">
+      <div class="left bg-black">
+        <div class="home bg-grey rounded m1 p1">
+          <div class="logo"><img class="invert" src="img/svg/logo.svg" alt="spotify" srcset=""></div>
+          <ul>
+            <li><img class="invert" src="img/svg/home.svg" alt="home">Home</li>
+            <li><img class="invert" src="img/svg/search.svg" alt="search" srcset="">Search</li>
+          </ul>
+        </div>
+        <div class="library bg-grey rounded p1 m1 ">
+          <div class="heading flex">
+            <img class="invert" src="img/svg/playlist.svg" alt="" srcset="" title="Collapse Your Library">
+            <h2>
+              Melody Catalog
+            </h2>
+            <img src="img/svg/plus.svg" class="playlist-add invert" alt="" srcset=""
+              title="Create playlist or folder">
+          </div>
+          <div class="create rounded">
+            <h4 class="m1 p1">
+              Create your first tracklist
+              <p>It's easy, we'll assist you</p>
+            </h4>
+            <button type="button" class="create-btn m1">Create playlist</button>
+          </div>
+          <div class="create rounded" id="podcast">
+            <h4 class="m1 p1">Let's find some podcasts to follow<p>We'll ensure you stay informed</p>
+            </h4>
+            <button type="button" class="create-btn m1">Browse series</button>
+            </div>
+          <div class="footer">
+            <div><a href="https://www.spotify.com/jp/legal/"><span>Legal Advisory</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/cookies-policy/"><span>Cookies</span></a></div>
+            <div><a href="https://www.spotify.com/jp/legal/privacy-policy/#s3"><span>About Ads</span></a></div>
+            <div><a href="https://www.spotify.com/jp/accessibility/"><span>Accessibility</span></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="right rounded m1 p1  bg-grey">
+        <div class="header rounded">
+          <div class="nav">
+            <div class="hamburgerContainer">
+              <!-- <img width="40" class="invert hamburger" src="img/hamburger.svg" alt=""> -->
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="arrow" onclick="togglePlaylists()">
+                <path
+                  d="M15 6L9.70711 11.2929C9.37377 11.6262 9.20711 11.7929 9.20711 12C9.20711 12.2071 9.37377 12.3738 9.70711 12.7071L15 18"
+                  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                class="arrow" onclick="togglePlaylists()">
+                <path
+                  d="M9 18L14.2929 12.7071C14.6262 12.3738 14.7929 12.2071 14.7929 12C14.7929 11.7929 14.6262 11.6262 14.2929 11.2929L9 6"
+                  stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </div>
+          </div>
+          <div class="buttons">
+            <button class="create-btn1" id="signup">Sign up</button>
+            <a href="/signup.html" target="_blank"><button class="create-btn1">Log in</button></a>
+          </div>
+        </div>
+        <div class="spotifyPlaylists m1" id="Set1">
+          <audio id="backgroundAudio">
+            Your browser does not support the audio tag.
+          </audio>
+          <h2>Trending Now #1</h2>
+          <div class="cardContainer">
+            <div class="card" data-song="audio/Amplifier - Imran Khan.mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover1.jpeg" alt="" srcset="">
+              <h3>Happy Hits</h3>
+              <p id="description">Hits to boost your mood</p>
+            </div>
+            <div class="card" data-song="audio/Bewafa - Imran Khan.mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover8.jpeg" alt="" srcset="">
+              <h3>Mix Mashups</h3>
+              <p id="description">Match the Vibe of 2023</p>
+            </div>
+            <div class="card">
+              <div class="play">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover6.jpeg" alt="" srcset="">
+              <h3>Bollywood Breeze</h3>
+              <p id="description">Rock..Hip..Hop NO STOP</p>
+            </div>
+            <div class="card" data-song="audio/Kashmir Animal 128 Kbps.mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover7.jpeg" alt="" srcset="">
+              <h3>Rome Of Romance</h3>
+              <p id="description">Love is in the Air</p>
+            </div>
+          </div>
+        </div>
+        <div class="spotifyPlaylists m1" id="Set2">
+          <h2>Punjabi Powerplay !</h2>
+          <div class="cardContainer">
+            <div class="card" data-song="audio/CHAMPAGNE_ Diljit Dosanjh.mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover3.jpeg" alt="" srcset="">
+              <h3>Diljit Dosanjh</h3>
+              <p id="description">G.O.A.T</p>
+            </div>
+            <div class="card" data-song="audio/Softly_128-(PagalWorld).mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover2.jpeg" alt="" srcset="">
+              <h3>Karan Aujla</h3>
+              <p id="description">Mexico calling.. Softly</p>
+            </div>
+            <div class="card" data-song="audio/Dawood - 5911.mp3">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover4.jpg" alt="" srcset="">
+              <h3> Sidhu Moose Wala</h3>
+              <p id="description">9211</p>
+            </div>
+            <div class="card">
+              <div class="play" onclick="playPause(this)">
+                <img src="img/svg/play.svg" alt="" srcset="">
+              </div>
+              <img src="img/cover5.jpeg" alt="" srcset="">
+              <h3>Parmish Verma</h3>
+              <p id="description">Why Wait? Check It Out</p>
+            </div>
+          </div>
+        </div>
+        <div class="playbar" id="playbar">
+          <div class="animationDiv">
+            <div class="songbuttons">
+              <label class="slider">
+                <input type="range" class="level" id="progressSlider" min="0" max="100" step="1" value="0"
+                  onchange="seekSong(this.value)">
+                <p class="songProgress" id="progressElement"></p>
+                <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0"
+                  viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+                  <g>
+                    <path
+                      d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z"
+                      fill="currentColor" data-original="#000000"></path>
+                    <path
+                      d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z"
+                      fill="currentColor" data-original="#000000"></path>
+                  </g>
+                </svg>
+              </label>
+              <input type="checkbox" id="checkboxInput">
+              <label for="checkboxInput" class="toggleSwitch">
+                <div class="speaker" onclick="toggleMute()">
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.0" viewBox="0 0 75 75">
+                    <path
+                      d="M39.389,13.769 L22.235,28.606 L6,28.606 L6,47.699 L21.989,47.699 L39.389,62.75 L39.389,13.769z"
+                      style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
+                    <path
+                      d="M48,27.6a19.5,19.5 0 0 1 0,21.4M55.1,20.5a30,30 0 0 1 0,35.6M61.6,14a38.8,38.8 0 0 1 0,48.6"
+                      style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
+                  </svg>
+                </div>
+                <div class="mute-speaker" onclick="toggleMute()">
+                  <svg version="1.0" viewBox="0 0 75 75" stroke="#fff" stroke-width="5">
+                    <path d="m39,14-17,15H6V48H22l17,15z" fill="#fff" stroke-linejoin="round"
+                      style="stroke:#fff;stroke-width:5;stroke-linejoin:round;fill:#fff;"></path>
+                    <path d="m49,26 20,24m0-24-20,24" fill="#fff" stroke-linecap="round"
+                      style="fill:none;stroke:#fff;stroke-width:5;stroke-linecap:round"></path>
+                  </svg>
+                </div>
+              </label>
+              <label class="slider">
+                <input type="range" class="level" id="volumeControl" min="0" max="1" step="0.1" value="1"
+                  onchange="adjustVolume(this)">
+                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                  <path
+                    d="M39.038,9.076C31.925,9.076,33.674,6,27,6c-1.6,0-2,1-2,2v21c0,2.214-1.032,4-5,4c-5.661,0-8,1.464-8,5 c0,2.383,0.489,6,7.936,6C26.855,44,27,38.682,27,36c0-1.027,0-3.903,0-7V17c0.005-1.355,0.2-2,1-2c5.138,0,3.871,3,11,3 c0,0,2,0,2-1.699c0-2.555,0-4.363,0-5.333C41,9.435,40.312,9.076,39.038,9.076z">
+                  </path>
+                </svg>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <div class="bottom flex">
+      <h4>Sign up and embrace the vibe, that makes you describe. #AdFreeMusic</h4>
+      <a href="/signup.html" target="_blank" rel="noopener noreferrer">
+      <button type="button" class="create-btn2">Sign up for free</button>
+      </a>
+    </div>
+    <div class="hero">
+      <div class="section1">
+        <div class="content">
+          <img src="img/cover.png" alt="Cover Image">
+          <h3>Discover Vibes, Embrace Artists</h3>
+          <p id="para">
+            Music Vibes: Elevate Your Journeys, Unleash Love, Drop Emotions On the Go!..Listen to the Release
+          </p>
+          <button id="subscribe">
+            <p>Subscribe</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+              <path
+                d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z">
+              </path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="section2">
+        <div class="container2">
+          <div class="panel " style="
+            background-image: url('img/panel5.png');
+            ">
+            <h3>Buzz</h3>
+          </div>
+          <div class="panel " style="
+            background-image: url('img/panel2.png');
+            ">
+            <h3>Perform</h3>
+          </div>
+          <div class="panel active" style="
+            background-image: url('img/panel1.png');
+            ">
+            <h3>Groove</h3>
+          </div>
+          <div class="panel" style="
+            background-image: url('img/panel3.png');
+            ">
+            <h3>Insane</h3>
+          </div>
+          <div class="panel " style="
+            background-image: url('img/panel4.png');
+            ">
+            <h3>Concert</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/app.js"></script>
+  </body>
+</html>

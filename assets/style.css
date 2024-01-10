@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+	background-color: black;
+	color: white;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Roboto', sans-serif;
+}
+
+.container {
+	max-width: 100%;
+}
+
+.left {
+	width: 30vw;
+	padding: 0px;
+}
+
+.right {
+	width: 70vw;
+	min-height: 70vh;
+	margin: 10px;
+	position: relative;
+}
+
+.home ul li {
+	display: flex;
+	width: 26px;
+	list-style: none;
+	gap: 15px;
+	padding-top: 8px;
+	padding: 10px 10px;
+	font-weight: bold;
+}
+
+.logo {
+	padding: 12px 12px;
+}
+
+.heading {
+	display: flex;
+	gap: 15px;
+	width: 100%;
+	padding-top: 14px;
+	padding: 12px 12px;
+	font-weight: bold;
+	align-items: center;
+	font-size: 10px;
+	display: flex;
+	justify-content: space-around;
+	/* This will place the items at the start and end of the container */
+	align-items: center;
+	/* This will vertically align the items */
+}
+
+.heading img {
+	width: 26px;
+}
+
+.library {
+	min-height: 65vh;
+	position: relative;
+}
+
+.create {
+	background-color: #242424;
+	margin-top: 12px;
+	padding: 8px;
+}
+
+.create h4 p {
+	margin-top: 12px;
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.create-btn {
+	width: 135px;
+	height: 32px;
+	/* Adjust the height based on your design preference */
+	border-radius: 25px;
+	border: 2px solid white;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+	/* transition: all 0.1s ease; Smooth transition for all properties over 0.3 seconds */
+}
+
+.create-btn:hover {
+	transform: scale(1.025);
+	opacity: 0.8;
+}
+
+#podcast {
+	margin-top: 16px;
+}
+
+
+.footer {
+	display: flex;
+	font-size: 10px;
+	color: grey;
+	gap: 18px;
+	position: absolute;
+	bottom: 0;
+	padding: 12px;
+
+}
+
+.footer a {
+	color: grey;
+	margin: 0 6px;
+}
+
+
+.bg-black {
+	background-color: black;
+	color: white;
+}
+
+.invert {
+	filter: invert(1);
+}
+
+.bg-grey {
+	background-color: #121212;
+}
+
+.bottom {
+	background-image: linear-gradient(to right, #199225, #009681, #0091c1, #1081cf, #936cae);
+	flex-direction: row;
+	margin: 8px;
+	height: 24px;
+	padding: 22px;
+	display: flex;
+	justify-content: space-between;
+	/* Aligns items to each end */
+	align-items: center;
+	/* Centers items vertically */
+}
+
+h3 {
+	margin-right: 10px;
+}
+
+/* Additional styling for the image elements if needed */
+.playlist-add {
+	padding: 5px;
+	/* Adjust padding as needed */
+	border-radius: 5px;
+	/* Add rounded corners if desired */
+	cursor: pointer;
+	/* Add cursor style for better indication of interactivity */
+}
+
+.create-btn1 {
+	width: 105px;
+	height: 45px;
+	/* Adjust the height based on your design preference */
+	border-radius: 25px;
+	border: 2px solid white;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 10px;
+	/* transition: all 0.1s ease; Smooth transition for all properties over 0.3 seconds */
+}
+
+.create-btn1:hover {
+	transform: scale(1.025);
+}
+
+#signup {
+	background-color: transparent;
+	border: none;
+	color: white;
+	font-weight: 700;
+	font-size: 16px;
+	opacity: 0.55;
+}
+
+#signup:hover {
+	opacity: 1;
+}
+
+.arrow {
+	background-color: black;
+	padding: 6px;
+	margin: 4px;
+	border-radius: 50px;
+	cursor: pointer;
+}
+
+.create-btn2 {
+	width: 165px;
+	height: 40px;
+	/* Adjust the height based on your design preference */
+	border-radius: 25px;
+	border: 2px solid white;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 10px;
+	/* transition: all 0.1s ease; Smooth transition for all properties over 0.3 seconds */
+}
+
+.create-btn1:hover {
+	transform: scale(1.025);
+}
+
+.header {
+	background-color: #242424;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header>* {
+	padding: 8px;
+}
+
+.switch {
+	cursor: pointer;
+	width: 120px;
+}
+
+.spotifyPlaylists {
+	padding: 12px;
+}
+
+#Set2 {
+	display: none;
+}
+
+.visible {
+	display: block;
+}
+
+.spotifyPlaylists h1 {
+	padding: 16px;
+}
+
+.spotifyPlaylists {
+	transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+	overflow: hidden;
+}
+
+.cardContainer {
+	margin: 32px;
+	display: flex;
+	gap: 24px;
+	flex-wrap: wrap;
+	overflow-y: auto;
+	max-height: 60vh;
+}
+
+.card {
+	width: 180px;
+	padding: 10px;
+	border-radius: 5px;
+	background-color: #252525;
+	position: relative;
+	transition: all .9s;
+}
+
+.card:hover {
+	background-color: rgb(105, 103, 103);
+	--a: 1;
+}
+
+.card:hover .play {
+	opacity: 1;
+	cursor: pointer;
+}
+
+.card>* {
+	padding-top: 8px;
+}
+
+.play {
+	width: 28px;
+	height: 28px;
+	background-color: #1FDF64;
+	border-radius: 50%;
+	padding: 4px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	bottom: 88px;
+	right: 17px;
+	opacity: var(--a);
+	transition: all 1s ease-out;
+	opacity: 0;
+}
+
+#description {
+	opacity: 0.25;
+	font-size: small;
+}
+
+.card img {
+	width: 100%;
+	object-fit: contain;
+}
+
+.playbar {
+	display: flex;
+	background-image: radial-gradient(circle, #d9e6dd, #a4aba3, #70746e, #40423e, #151513);
+	position: absolute;
+	width: 115vh;
+	padding: 22px;
+	bottom: 0;
+	display: none;
+	opacity: 0;
+	transition: opacity 0.5s ease-in-out;
+	color: #121212
+}
+
+
+.songbuttons {
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row-reverse;
+	gap: 12px;
+}
+
+#animationDiv {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgba(0, 0, 0, 0.7);
+	color: white;
+	padding: 20px;
+	border-radius: 10px;
+	animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+
+	0%,
+	100% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------- */
+
+.hero {
+	display: flex;
+	margin: 12px;
+	padding: 28px;
+	flex-direction: row-reverse;
+	gap: 22px;
+	overflow: hidden;
+}
+
+@keyframes borderAnimation {
+	0% {
+		border-color: rgb(6, 143, 255);
+	}
+
+	25% {
+		border-color: rgb(235, 212, 35);
+	}
+
+	50% {
+		border-color: rgb(255, 255, 255);
+	}
+
+	75% {
+		border-color: rgb(225, 9, 52);
+	}
+
+	100% {
+		border-color: rgb(95, 38, 175);
+	}
+}
+
+.section1 {
+	background-image: linear-gradient(to right top, #090909, #131313, #1a1a1a, #212121, #282828);
+	width: 35%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	border: 1px inset rgb(0, 0, 0);
+	animation: borderAnimation 5s infinite linear;
+	/* Change the duration as needed */
+	transition: border-color 1s ease;
+}
+
+/* Add some styles to the h3 for better visibility */
+.section1 h3 {
+	font-size: 18px;
+	/* Adjust the font size */
+	margin-top: 20px;
+	/* Add some space below the h3 */
+	font-style: italic;
+	font-display: inherit;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Add some styles to the image for better presentation */
+.content img {
+	max-width: 60%;
+	/* Make sure the image doesn't exceed its container */
+	height: 60%;
+	/* Maintain the aspect ratio */
+	transition: all 0.3s ease;
+}
+
+.content img:hover {
+	cursor: pointer;
+	transform: scale(1.10);
+}
+
+#para {
+	max-width: 90%;
+	padding: 4px;
+	margin: 8px;
+	color: whitesmoke;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.section2 {
+	width: 65%;
+}
+
+.container2 {
+	margin: 8px;
+	padding: 6px;
+	display: flex;
+	width: 100vh;
+}
+
+.panel {
+	background-size: auto 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 75vh;
+	width: fit-content;
+	color: white;
+	cursor: pointer;
+	flex: 0.5;
+	margin: 10px;
+	position: relative;
+	transition: flex 0.5s ease-in;
+}
+
+.panel h3 {
+	font-size: 14px;
+	position: absolute;
+	bottom: 8px;
+	left: 50px;
+	margin: 0;
+	opacity: 0;
+}
+
+.panel.active {
+	flex: 5;
+}
+
+.panel.active h3 {
+	opacity: 1;
+	transition: opacity 0.7s ease-in 0.4s;
+}
+
+.heading {
+	text-align: center;
+	margin: 1rem 0 0;
+}
+
+.desc {
+	text-align: center;
+	color: gray;
+	margin: 0 0 2rem
+}
+
+@media (max-width: 768px) {
+	.container {
+		width: 100vw;
+	}
+	/* It will hide the 4th and 5th panel when screen size is less than 480px */
+	.panel:nth-of-type(4),
+	.panel:nth-of-type(5) {
+		display: none;
+	}
+
+	.panel.active {
+		flex: 5;
+	}
+
+	.heading {
+		font-size: large;
+	}
+}
