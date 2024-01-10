@@ -14,7 +14,7 @@ function removeActiveClasses() {
 }
 
 function validateForm(event) {
-    event.preventDefault(); // Prevents the form from submitting by default
+    event.preventDefault(); 
 
     var email = document.getElementById('mail').value;
     var password = document.getElementById('pass').value;
@@ -28,7 +28,6 @@ function validateForm(event) {
     if (email.trim() === '' || password.trim() === '') {
         alert('Please fill in all fields');
     } else {
-        // Password validation: Check length and presence of lowercase and uppercase characters
         if (password.length < 8) {
             displayError('Must be at least 8 characters long');
             animateField('pass');
@@ -37,8 +36,6 @@ function validateForm(event) {
             animateField('pass');
         } else {
             displaySuccess('Form submitted successfully');
-            // Uncomment the line below to submit the form
-            // event.target.submit();
         }
     }
 }
