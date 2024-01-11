@@ -13,12 +13,12 @@
          <div class="left bg-black">
             <div class="home bg-grey rounded m1 p1">
                <div class="logo">
-                  <a href="https://spotifyreplica.vercel.app/">
+                  <a href="/index.html">
                   <img class="invert" src="img/svg/logo.svg" alt="spotify" srcset="">
                   </a>
                </div>
                <ul>
-                  <li><img class="invert" src="img/svg/home.svg" alt="home">Home</li>
+                  <li id="homeIcon" onclick="OffNav()"><img class="invert" id="homeIcon" src="img/svg/home.svg" alt="home" onclick="OffNav()">Home</li>
                   <li><img class="invert" src="img/svg/search.svg" alt="search" srcset="">Search</li>
                </ul>
             </div>
@@ -74,7 +74,7 @@
                </div>
                <div class="buttons">
                   <button class="create-btn1" id="signup">Sign up</button>
-                  <a href="https://asquare04.github.io/SpotifyReplica/signup.html" target="_blank"><button class="create-btn1">Log in</button></a>
+                  <a href="/signup.html" target="_blank"><button class="create-btn1">Log in</button></a>
                </div>
             </div>
             <div class="spotifyPlaylists m1" id="Set1">
@@ -126,7 +126,7 @@
                      </div>
                      <img src="img/cover3.jpeg" alt="" srcset="">
                      <h3>Diljit Dosanjh</h3>
-                     <p id="description">G.O.A.T</p>
+                     <p id="description">Listen to Legendary G.O.A.T </p>
                   </div>
                   <div class="card" data-song="audio/Softly_128-(PagalWorld).mp3">
                      <div class="play" onclick="playPause(this)">
@@ -134,7 +134,7 @@
                      </div>
                      <img src="img/cover2.jpeg" alt="" srcset="">
                      <h3>Karan Aujla</h3>
-                     <p id="description">Mexico calling.. Softly</p>
+                     <p id="description">White Brown Black ? Softly</p>
                   </div>
                   <div class="card" data-song="audio/Dawood - 5911.mp3">
                      <div class="play" onclick="playPause(this)">
@@ -158,20 +158,18 @@
                <div class="animationDiv">
                   <div class="songbuttons">
                      <label class="slider">
-                        <input type="range" class="level" id="progressSlider" min="0" max="100" step="1" value="0"
+                        <input type="range" class="level" id="progressSlider" min="0" max="100" step="0.1" value="0"
                            onchange="seekSong(this.value)">
-                        <p class="songProgress" id="progressElement"></p>
-                        <svg class="volume" xmlns="http://www.w3.org/2000/svg" version="1.1"
+                        <p class="songProgress" id="progressElement" ></p>
+                        <svg class="volume" id="tone" xmlns="http://www.w3.org/2000/svg" version="1.1"
                            xmlns:xlink="http://www.w3.org/1999/xlink" width="30" height="30" x="0" y="0"
                            viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
-                           <g>
                               <path
                                  d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z"
                                  fill="currentColor" data-original="#000000"></path>
                               <path
                                  d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z"
                                  fill="currentColor" data-original="#000000"></path>
-                           </g>
                         </svg>
                      </label>
                      <input type="checkbox" id="checkboxInput">
@@ -198,7 +196,7 @@
                      <label class="slider">
                         <input type="range" class="level" id="volumeControl" min="0" max="1" step="0.1" value="1"
                            onchange="adjustVolume(this)">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
+                        <svg xmlns="http://www.w3.org/2000/svg" id="sound" x="0px" y="0px" width="30" height="30" viewBox="0 0 50 50">
                            <path
                               d="M39.038,9.076C31.925,9.076,33.674,6,27,6c-1.6,0-2,1-2,2v21c0,2.214-1.032,4-5,4c-5.661,0-8,1.464-8,5 c0,2.383,0.489,6,7.936,6C26.855,44,27,38.682,27,36c0-1.027,0-3.903,0-7V17c0.005-1.355,0.2-2,1-2c5.138,0,3.871,3,11,3 c0,0,2,0,2-1.699c0-2.555,0-4.363,0-5.333C41,9.435,40.312,9.076,39.038,9.076z">
                            </path>
@@ -212,7 +210,7 @@
       </div>
       <div class="bottom flex">
          <h4>Sign up and embrace the vibe, that makes you describe. #AdFreeMusic</h4>
-         <a href="https://asquare04.github.io/SpotifyReplica/signup.html" target="_blank" rel="noopener noreferrer">
+         <a href="/signup.html" target="_blank" rel="noopener noreferrer">
          <button type="button" class="create-btn2">Sign up for free</button>
          </a>
       </div>
