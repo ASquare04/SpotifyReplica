@@ -127,3 +127,9 @@ function hideAnimationDivs() {
         div.style.display = "none";
     });
 }
+
+function toggleNav() {
+    document.querySelector(".hamburger").addEventListener("click",()=>{
+    document.querySelector(".left").style.left="0"
+})
+}
