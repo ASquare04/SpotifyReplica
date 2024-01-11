@@ -15,38 +15,10 @@ var backgroundAudio = document.getElementById("backgroundAudio");
 var currentPlaying = null;
 var progressElement = document.getElementById("progressElement");
 var volumeControl = document.getElementById("volumeControl");
-var progressSlider = document.getElementById("progressSlider");
+var progressSlider = document.getElementById("progressSlider"); // New progress slider
 var currentPlaybackPosition = 0;
 var progressUpdateInterval;
 
-function updateProgress() {
-    var percentage = (backgroundAudio.currentTime / backgroundAudio.duration) * 100;
-
-    var currentPercentage = parseFloat(progressSlider.value);
-    var targetPercentage = Math.min(percentage, currentPercentage + 1);
-
-    animateSlider(currentPercentage, targetPercentage);
-}
-
-function animateSlider(currentValue, targetValue) {
-    var duration = 1000;
-    var startTime = Date.now();
-
-    function update() {
-        var currentTime = Date.now();
-        var elapsedTime = currentTime - startTime;
-        var progress = Math.min(1, elapsedTime / duration);
-        var newValue = currentValue + (targetValue - currentValue) * progress;
-
-        progressSlider.value = newValue.toFixed(2);
-
-        if (progress === 1) {
-            clearInterval(animationInterval);
-        }
-    }
-
-    var animationInterval = setInterval(update, 16);
-}
 
 function seekSong(value) {
     var newPosition = (value / 100) * backgroundAudio.duration;
@@ -55,7 +27,10 @@ function seekSong(value) {
 
 function playPause(playDiv) {
     var bar = document.getElementById("playbar");
+    var back = document.getElementsByClassName("right")[0];
     var barDisplayStyle = window.getComputedStyle(bar).getPropertyValue("display");
+
+    back.style.transition = 'background-image 5s ease';
 
     if (barDisplayStyle === 'none') {
         bar.style.display = 'block';
@@ -77,17 +52,27 @@ function playPause(playDiv) {
         clearInterval(progressUpdateInterval);
     } else {
         backgroundAudio.src = song;
-
         backgroundAudio.addEventListener("loadedmetadata", function () {
             backgroundAudio.currentTime = currentPlaybackPosition;
             backgroundAudio.play();
             playDiv.innerHTML = '<img src="img/svg/pause.svg">';
+            // Set an interval to update the progress regularly
             progressUpdateInterval = setInterval(updateProgress, 1000);
         }, { once: true });
-    }
 
+        backgroundAudio.addEventListener("ended", function () {
+
+            bar.style.opacity = '0';
+            setTimeout(function () {
+                bar.style.display = 'none';
+            }, 500);
+
+            playDiv.innerHTML = '<img src="img/svg/play.svg">';
+        }, { once: true });
+    }
     currentPlaying = song;
 }
+
 
 document.getElementById("mute").addEventListener("click", function () {
     currentPlaying = null;
@@ -127,9 +112,14 @@ function hideAnimationDivs() {
         div.style.display = "none";
     });
 }
-
 function toggleNav() {
     document.querySelector(".hamburger").addEventListener("click",()=>{
     document.querySelector(".left").style.left="0"
+})
+}
+
+function OffNav() {
+    document.getElementById("homeIcon").addEventListener("click",()=>{
+        document.querySelector(".left").style.left="-100%"
 })
 }
