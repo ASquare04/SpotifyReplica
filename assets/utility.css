@@ -31,6 +31,12 @@
     padding: 6px;
 }
 
+@media (max-width:576px){
+  #subscribe{
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+}
 
 /* The switch - the box around the speaker*/
 .toggleSwitch {
