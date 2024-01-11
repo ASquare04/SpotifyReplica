@@ -31,22 +31,64 @@
     padding: 6px;
 }
 
-@media (max-width:576px){
-  #subscribe{
-    font-size: 10px;
-    margin-bottom: 8px;
+@keyframes rotateColors {
+  0% {
+    transform: rotate(0deg);
+    border-color: rgb(255, 0, 0);
+  }
+  10% {
+    transform: rotate(36deg);
+    border-color: rgb(255, 255, 0);
+  }
+  20% {
+    transform: rotate(72deg);
+    border-color: rgb(0, 255, 0);
+  }
+  30% {
+    transform: rotate(108deg);
+    border-color: rgb(0, 255, 255);
+  }
+  40% {
+    transform: rotate(144deg);
+    border-color: rgb(0, 0, 255);
+  }
+  50% {
+    transform: rotate(180deg);
+    border-color: rgb(255, 0, 255);
+  }
+  60% {
+    transform: rotate(216deg);
+    border-color: rgb(255, 255, 0);
+  }
+  70% {
+    transform: rotate(252deg);
+    border-color: rgb(0, 255, 0);
+  }
+  80% {
+    transform: rotate(288deg);
+    border-color: rgb(0, 255, 255);
+  }
+  90% {
+    transform: rotate(324deg);
+    border-color: rgb(0, 0, 255);
+  }
+  100% {
+    transform: rotate(360deg);
+    border-color: rgb(255, 0, 0);
   }
 }
 
-/* The switch - the box around the speaker*/
+
 .toggleSwitch {
     width: 50px;
     height: 50px;
+    border: 2px solid rgb(255, 0, 0); /* Initial border color */
+    animation: rotateColors 2s infinite linear; /* Rotate every 4 seconds */
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    animation: rotateColors 3s infinite linear; 
     background-color:#000;
     border-radius: 50%;
     cursor: pointer;
@@ -113,12 +155,9 @@
   }
   
   #checkboxInput:hover + .toggleSwitch {
-    background-color: rgb(75, 73, 70);
+    background-color: rgb(95, 91, 83);
     border-radius: 1px solid white;
   }
-
-
-
 
   /* level settings 👇 */
 
@@ -281,5 +320,40 @@ button svg {
 #subscribe:hover {
   background-color: #25D366;
   cursor: pointer;
+}
+
+@media (max-width:668px) {
+  .toggleSwitch{
+    border: 1px solid red;
+    width: 40px;
+    height: 36px;
+  }
+  .bell{
+    width: 2px;
+  }
+  .speaker,.mute-speaker{
+    width: 50%;
+    height: 50%;
+  }
+  .speaker svg, .mute-speaker svg{
+    width: 12px;
+  }
+  .songProgress{
+    display: none;
+}
+  .slider{
+    --slider-width:60%;
+    --slider-height:3px
+  }
+  #tone,#sound{
+    width: 18px;
+    height: 18px;
+  }
+  #subscribe{
+    font-size: 10px;
+    margin-bottom: 6px;
+    width: 7.5em;
+  }
+  
 }
 
