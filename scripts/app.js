@@ -1,3 +1,9 @@
+setTimeout(function() {
+  document.querySelector('.loader').style.display = 'none';
+  document.getElementById('mainpage').style.display = 'block';
+  document.body.style.backgroundColor = 'black'; 
+}, 2500);
+
 const panels = document.querySelectorAll('.panel');
 
 panels.forEach((panel) => {
